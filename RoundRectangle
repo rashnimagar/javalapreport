@@ -1,0 +1,36 @@
+package com.example.demojavafx;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+public class DrawArcRectangle extends Application{
+    @Override
+    public void start(Stage primaryStage){
+        //create a pane
+        Pane pane = new Pane();
+        //create a rectangle
+        Rectangle rectangle = new Rectangle();
+        rectangle.setX(150);
+        rectangle.setY(150);
+        rectangle.setHeight(100);
+        rectangle.setWidth(200);
+        rectangle.setArcHeight(30);
+        rectangle.setArcWidth(20);
+        rectangle.setFill(Color.PINK);
+        rectangle.setStroke(Color.BLACK);
+
+        //add the rectangle in pane
+        pane.getChildren().add(rectangle);
+        //create a scene and set it in it
+        Scene scene = new Scene(pane, 500, 500);
+        primaryStage.setTitle("Draw Arced Rectangle");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    public static void main(String[] args){
+        launch(args);
+    }
+}
